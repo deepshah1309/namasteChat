@@ -10,7 +10,7 @@ import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfie
 import axios from 'axios';
 import './Main.css';
 let socket;
-const CONNECTION_URL="localhost:3001/";
+const CONNECTION_URL="https://namastechat.herokuapp.com/";
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -62,7 +62,7 @@ const Main=()=>{
             setOpen(true);
            
         })
-     axios.post("http://localhost:3001/room_clients",{room}).then((response)=>{
+     axios.post(CONNECTION_URL+"room_clients",{room}).then((response)=>{
             setroomClients(response.data.clients);
         })
 

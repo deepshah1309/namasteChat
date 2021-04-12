@@ -19,13 +19,13 @@ if(process.env.NODE_ENV=="production"){
         res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
 }
-const server=app.listen(proceess.env.PORT||3001,()=>{
+const server=app.listen(process.env.PORT||3001,()=>{
     console.log("Server running at port 3001");
 })
 
 const io = require("socket.io")(server, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "https://namastechat.herokuapp.com/",
       methods: ["GET", "POST"]
     }
   });
