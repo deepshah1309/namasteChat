@@ -1,0 +1,149 @@
+.App {
+  place-items: center;
+  display: grid;
+  height:100vh;
+ background-color: #2a2730;
+}
+body{
+  padding: 0;
+  margin:0;
+}
+.chatContainer{
+  width:500px;
+  height:90vh;
+
+  border: 5px solid #0091ff;
+  border-radius:7px;
+  display:flex;
+ 
+  flex-direction: column;
+}
+
+.chatContainer .messages{
+  height:90%;
+  width:100%;
+  overflow: auto;
+  background-color: beige;
+}
+
+.set{
+ 
+  font-size:1.5rem;
+  background-color: black;
+  display: block;
+  border:2px solid aqua;
+  border-radius: 12px;
+  color:white;
+}
+.borders{
+  border:4px solid black;
+}
+.chatContainer .messageInputs{
+height:10%;
+width:100%;
+display: flex;
+flex-direction: row;
+}
+.chatContainer .messageInputs input{
+flex:80%;
+height:calc(100%-5px);
+border:none;
+font-size: 20px;
+padding-left: 20px;
+border-top:5px solid #0091ff;
+}
+.chatContainer .messageInputs button{
+flex:20%;
+height:100%;
+background-color: #0091ff;
+border:5px solid #0091ff;
+border-bottom:none;
+border: none;
+color:white;
+font-size: 18px;
+border-right:none;
+}
+
+.login{
+  width:500px;
+  height:90vh;
+  border: 5px solid #0091ff;
+  border-radius:7px;
+  display:flex;
+  background-color: beige;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.login input{
+  margin:10px;
+  width:200px;
+  height:40px;
+  border:2px solid #0091ff;
+  background-color: transparent;
+  padding-left:10px;
+  color:black;
+  font-size: 15px;
+}
+.colorname{
+  color:white;
+}
+.login button{
+  margin:10px;
+  width:200px;
+  height:40px;
+  margin-top:25px;
+ border: none;
+  background-color:#0091ff;
+  padding-left:10px;
+  color:white;
+  font-size: 15px;
+}
+.login input:focus{
+  outline:none;
+}
+.messageContainer{
+  display:flex;
+
+  
+  width:calc(100%-30px);
+}
+.you{
+display: flex;
+justify-content: flex-end;
+}
+.other .messageIndividual{
+  background-color: aliceblue;
+  color:black;
+}
+
+.other {
+display: flex;
+justify-content: flex-start;
+}
+.you .messageIndividual{
+background-color:yellowgreen;
+color:black;
+}
+.messageContainer h3{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:300;
+  font-size:17px;
+
+}
+.messageIndividual{
+  width:200px;
+  height:auto;
+  border-radius:12px;
+  margin-right: 5px;
+  display:grid;
+  place-items: center;;
+  margin:20px;
+  background-color:#0091ff;
+  color:white;
+  opacity:0.9;
+  margin-top:20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
