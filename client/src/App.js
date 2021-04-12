@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Main from './Main';
+import Video from './Video';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,9 +32,7 @@ const App=()=>{
                    <Main/>
                 </Route>
                 <Route exact path="/videostream">
-                    <div className="container-fluid">
-                            will be deployed soon
-                    </div>
+                    <Video/>
                 </Route>
             </Switch>
         </Router>
