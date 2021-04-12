@@ -99,7 +99,7 @@ function Video() {
 		<div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+					{stream &&  <video playsInline ref={myVideo} autoPlay style={{ width: "300px" }} />}
 				</div>
 				<div className="video">
 					{callAccepted && !callEnded ?
