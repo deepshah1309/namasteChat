@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import InputEmoji from "react-input-emoji";
 
-import Picker from 'emoji-picker-react';
 //import Button from '@material-ui/core/Button';
 
 import SendIcon from '@material-ui/icons/Send';
@@ -23,15 +23,11 @@ const Main=()=>{
     const [roomClients,setroomClients]=useState();
     const [room,setRoom]=useState("");
     const [user,setUser]=useState("");
-    const [chosenEmoji, setChosenEmoji] = useState(null);
+   
     //after login
-    const [message,setMessage]=useState("");
+    const [text,setText]=useState("");
     const [messageList,setMessageList]=useState([]);  
-    const onEmojiClick = (event, emojiObject) => {
-        setChosenEmoji(emojiObject);
-        setMessage(message+chosenEmoji.emoji);
-        setChosenEmoji(null);
-      };
+   
     useEffect(()=>{
         socket=io(CONNECTION_URL);
         socket.on("receive_message",(data)=>{
@@ -75,7 +71,7 @@ const Main=()=>{
             room:room,
             content:{
             author:user,
-            message:message
+            message:text
             }
         }
         await socket.emit("send_message",messageContent);
@@ -83,7 +79,7 @@ const Main=()=>{
         var chatWindow = document.getElementById('chat-window'); 
 var xH = chatWindow.scrollHeight; 
 chatWindow.scrollTo(0, xH);
-        setMessage("");
+        setText("");
     }
     return (
         <div className="container-fluid bg-light text-dark">
@@ -134,20 +130,15 @@ chatWindow.scrollTo(0, xH);
                    
                       
                           <InputEmoji
-                            value={text}
+                          
                             
                             cleanOnEnter
                            
                             className="emoji"
-                            placeholder="message.." value={message} onChange={(e)=>{
-                        
-                                setMessage(e.target.value)
-                                }} 
-                            onKeyPress={event => {
-                                    if (event.key === 'Enter') {
-                                      sendMessage();
-                                    }
-                                  }}
+                            placeholder="message.." 
+                            value={text} 
+                            onChange={setText} 
+                           
                         />
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>
