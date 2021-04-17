@@ -81,7 +81,7 @@ chatWindow.scrollTo(0, xH);
         setMessage("");
     }
     return (
-        <div className="container-fluid">
+        <div className="container-fluid bg-light text-dark">
               <ToastContainer />    
             <div className="row text-center borders">
                     <h1 className="text-primary">NamasteChat</h1>
