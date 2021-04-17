@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+
 import SendIcon from '@material-ui/icons/Send';
 //import { makeStyles } from '@material-ui/core/styles';
 import io from 'socket.io-client';
@@ -92,13 +91,7 @@ chatWindow.scrollTo(0, xH);
     }
     return (
         <div className="container-fluid">
-              <Snackbar open={open} onClose={handleClose}
               
-        anchorOrigin={{vertical:"bottom",horizontal: "center" }}>
-        <Alert onClose={handleClose} severity="info">
-            yeah !! &nbsp;{messageInAlert} &nbsp; has joined us
-        </Alert>
-      </Snackbar>
             <div className="row text-center borders">
                     <h1 className="text-primary">NamasteChat</h1>
             </div>
