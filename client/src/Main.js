@@ -30,6 +30,7 @@ const Main=()=>{
     const onEmojiClick = (event, emojiObject) => {
         setChosenEmoji(emojiObject);
         setMessage(message+chosenEmoji.emoji);
+        setChosenEmoji(null);
       };
     useEffect(()=>{
         socket=io(CONNECTION_URL);
@@ -130,15 +131,24 @@ chatWindow.scrollTo(0, xH);
                    
                     </div>
                     <div className="messageInputs">
-                    <input type="text" placeholder="message.." value={message} onChange={(e)=>{
+                   
+                      
+                          <InputEmoji
+                            value={text}
+                            
+                            cleanOnEnter
+                           
+                            className="emoji"
+                            placeholder="message.." value={message} onChange={(e)=>{
                         
-                        setMessage(e.target.value)
-                        }} onKeyPress={event => {
-                            if (event.key === 'Enter') {
-                              sendMessage();
-                            }
-                          }}/> 
-                          <Picker className="emoji" onEmojiClick={onEmojiClick} />
+                                setMessage(e.target.value)
+                                }} 
+                            onKeyPress={event => {
+                                    if (event.key === 'Enter') {
+                                      sendMessage();
+                                    }
+                                  }}
+                        />
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>
                 </div>
