@@ -138,7 +138,7 @@ chatWindow.scrollTo(0, xH);
                             placeholder="message.." 
                             value={text} 
                             onChange={setText} 
-                           
+                            onEnter={sendMessage}
                         />
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>

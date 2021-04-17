@@ -58,8 +58,6 @@
   .chatContainer .messageInputs button{
   flex:20%;
   height:100%;
-  background-color: #0091ff;
-  border:5px solid #0091ff;
   border-bottom:none;
   border: none;
   color:black;
