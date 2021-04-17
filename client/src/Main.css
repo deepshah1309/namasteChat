@@ -23,7 +23,9 @@
     height:90%;
     width:100%;
     overflow: auto;
-    background-color: beige;
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Pp4IMng3PM34XbjrXl8UsVGUXgNwPVxl5xaRhqEU01ePwBBE&s');
+    background-attachment: scroll;
+ 
   }
   
   .set{

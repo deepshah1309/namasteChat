@@ -30,8 +30,9 @@ const Main=()=>{
         socket.on("receive_message",(data)=>{
             console.log(data);
            
+            
+            toast(data.author+" has sent a message:"+data.message);
             setMessageList([...messageList,data]);
-            toast(data.author+":"+data.message);
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
             chatWindow.scrollTo(0, xH);
