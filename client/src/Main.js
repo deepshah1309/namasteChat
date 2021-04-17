@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Picker from 'emoji-picker-react';
 //import Button from '@material-ui/core/Button';
 
 import SendIcon from '@material-ui/icons/Send';
@@ -21,10 +23,14 @@ const Main=()=>{
     const [roomClients,setroomClients]=useState();
     const [room,setRoom]=useState("");
     const [user,setUser]=useState("");
+    const [chosenEmoji, setChosenEmoji] = useState(null);
     //after login
     const [message,setMessage]=useState("");
     const [messageList,setMessageList]=useState([]);  
-   
+    const onEmojiClick = (event, emojiObject) => {
+        setChosenEmoji(emojiObject);
+        setMessage(message+chosenEmoji.emoji);
+      };
     useEffect(()=>{
         socket=io(CONNECTION_URL);
         socket.on("receive_message",(data)=>{
@@ -132,6 +138,7 @@ chatWindow.scrollTo(0, xH);
                               sendMessage();
                             }
                           }}/> 
+                          <Picker className="emoji" onEmojiClick={onEmojiClick} />
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>
                 </div>
