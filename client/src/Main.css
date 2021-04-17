@@ -2,7 +2,7 @@
     place-items: center;
     display: grid;
     height:100vh;
-   background-color: #2a2730;
+   background-color:white;
   }
   body{
     padding: 0;
@@ -35,7 +35,7 @@
     display: block;
     border:2px solid aqua;
     border-radius: 12px;
-    color:white;
+    color:black;
   }
   .borders{
     border:4px solid black;
@@ -61,7 +61,7 @@
   border:5px solid #0091ff;
   border-bottom:none;
   border: none;
-  color:white;
+  color:black;
   font-size: 18px;
   border-right:none;
   }
@@ -89,7 +89,7 @@
     font-size: 15px;
   }
   .colorname{
-    color:white;
+    color:black;
   }
   .login button{
     margin:10px;
@@ -116,7 +116,7 @@
   justify-content: flex-end;
   }
   .other .messageIndividual{
-    background-color: aliceblue;
+    background-color:whitesmoke;
     color:black;
   }
   
@@ -125,7 +125,7 @@
   justify-content: flex-start;
   }
   .you .messageIndividual{
-  background-color:yellowgreen;
+  background-color:bisque;
   color:black;
   }
   .messageContainer h3{
@@ -144,7 +144,7 @@
     place-items: center;;
     margin:20px;
     background-color:#0091ff;
-    color:white;
+    color:black;
     opacity:0.9;
     margin-top:20px;
     font-family: Arial, Helvetica, sans-serif;
