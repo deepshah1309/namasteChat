@@ -127,10 +127,11 @@ chatWindow.scrollTo(0, xH);
                     <input type="text" placeholder="message.." value={message} onChange={(e)=>{
                         
                         setMessage(e.target.value)
-                        if(e.code ==='Enter'){
-                            sendMessage();
-                        }
-                        }}/> 
+                        }} onKeyPress={event => {
+                            if (event.key === 'Enter') {
+                              sendMessage();
+                            }
+                          }}/> 
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>
                 </div>
