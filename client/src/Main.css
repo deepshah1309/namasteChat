@@ -35,7 +35,7 @@
     display: block;
     border:2px solid aqua;
     border-radius: 12px;
-    color:black;
+    color:white;
   }
   .borders{
     border:4px solid black;
@@ -72,7 +72,7 @@
     border: 5px solid #0091ff;
     border-radius:7px;
     display:flex;
-    background-color: beige;
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Pp4IMng3PM34XbjrXl8UsVGUXgNwPVxl5xaRhqEU01ePwBBE&s');
     align-items: center;
     justify-content: center;
     flex-direction: column;
