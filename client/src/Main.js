@@ -28,12 +28,10 @@ const Main=()=>{
     useEffect(()=>{
         socket=io(CONNECTION_URL);
         socket.on("receive_message",(data)=>{
-            console.log(data);
+            
            
             setMessageList([...messageList,data]);
-            // if(data.author!==user){
-            // toast(data.author+" has sent a message:"+data.message);
-            // }
+           
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
             chatWindow.scrollTo(0, xH);
@@ -53,7 +51,7 @@ const Main=()=>{
         //     console.log(data);
         //     setroomClients(data);
         // })
-    },[messageList,room])
+    },[])
     const connectToRoom=()=>{
         
         var roomObject={
@@ -126,7 +124,13 @@ chatWindow.scrollTo(0, xH);
                    
                     </div>
                     <div className="messageInputs">
-                    <input type="text" placeholder="message.." value={message} onChange={(e)=>{setMessage(e.target.value)}}/> 
+                    <input type="text" placeholder="message.." value={message} onChange={(e)=>{
+                        
+                        setMessage(e.target.value)
+                        if(e.code ==='Enter'){
+                            sendMessage();
+                        }
+                        }}/> 
                     <button onClick={sendMessage}><SendIcon/></button>   
                     </div>
                 </div>
