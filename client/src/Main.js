@@ -32,8 +32,9 @@ const Main=()=>{
         socket=io(CONNECTION_URL);
         socket.on("receive_message",(data)=>{
             
-           
-            setMessageList([...messageList,data]);
+           var mArrays=messageList;
+           mArrays.push(data);
+            setMessageList(mArrays);
            
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
@@ -75,7 +76,9 @@ const Main=()=>{
             }
         }
         await socket.emit("send_message",messageContent);
-        setMessageList([...messageList,messageContent.content]);
+        var mArray=messageList;
+        mArray.push(messageContent.content);
+        setMessageList(mArray);
         var chatWindow = document.getElementById('chat-window'); 
 var xH = chatWindow.scrollHeight; 
 chatWindow.scrollTo(0, xH);
