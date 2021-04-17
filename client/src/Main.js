@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
@@ -11,18 +13,7 @@ import axios from 'axios';
 import './Main.css';
 let socket;
 const CONNECTION_URL="https://namastechat.herokuapp.com/";
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
-  
-//   const useStyles = makeStyles((theme) => ({
-//     root: {
-//       width: '100%',
-//       '& > * + *': {
-//         marginTop: theme.spacing(2),
-//       },
-//     },
-//   }));
+
 const Main=()=>{
     // const classes = useStyles()
     const [messageInAlert,setmessageInAlert]=useState("");
@@ -51,14 +42,15 @@ const Main=()=>{
     useEffect(()=>{
         socket.on("receive_message",(data)=>{
             console.log(data);
+            toast(data);
             setMessageList([...messageList,data]);
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
             chatWindow.scrollTo(0, xH);
         })
         socket.on("user_joined",async(data)=>{
-            setmessageInAlert(data);
-
+            
+            toast(data);
             setOpen(true);
            
         })
