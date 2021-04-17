@@ -15,8 +15,8 @@ const CONNECTION_URL="https://namastechat.herokuapp.com/";
 
 const Main=()=>{
     // const classes = useStyles()
-    const [messageInAlert,setmessageInAlert]=useState("");
-    const [open, setOpen] =useState(false);
+    
+  
     const [loggedIn,setLoggedIn]=useState(false);
     const [roomClients,setroomClients]=useState();
     const [room,setRoom]=useState("");
@@ -28,13 +28,7 @@ const Main=()=>{
 
    
   
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setOpen(false);
-    };
+    
     useEffect(()=>{
         socket=io(CONNECTION_URL);
     },[])
