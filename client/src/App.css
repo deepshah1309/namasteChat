@@ -2,7 +2,7 @@
   place-items: center;
   display: grid;
   height:100vh;
- background-color: #2a2730;
+ background-color:white;
 }
 body{
   padding: 0;
@@ -33,7 +33,7 @@ body{
   display: block;
   border:2px solid aqua;
   border-radius: 12px;
-  color:white;
+  color:black;
 }
 .borders{
   border:4px solid black;
@@ -87,7 +87,7 @@ border-right:none;
   font-size: 15px;
 }
 .colorname{
-  color:white;
+  color:black;
 }
 .login button{
   margin:10px;
@@ -114,7 +114,7 @@ display: flex;
 justify-content: flex-end;
 }
 .other .messageIndividual{
-  background-color: aliceblue;
+  background-color:whitesmoke;
   color:black;
 }
 
@@ -123,7 +123,7 @@ display: flex;
 justify-content: flex-start;
 }
 .you .messageIndividual{
-background-color:yellowgreen;
+background-color:bisque;
 color:black;
 }
 .messageContainer h3{
