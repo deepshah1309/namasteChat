@@ -44,7 +44,7 @@ const Main=()=>{
         socket.on("user_joined",async(data)=>{
             
             toast(data);
-            setOpen(true);
+           
            
         })
      axios.post(CONNECTION_URL+"room_clients",{room}).then((response)=>{
@@ -140,4 +140,4 @@ chatWindow.scrollTo(0, xH);
         </div>
     )
 }
-export default Main;
+export default Main;    
