@@ -31,9 +31,9 @@ const Main=()=>{
             console.log(data);
            
             setMessageList([...messageList,data]);
-            if(data.author!==user){
-            toast(data.author+" has sent a message:"+data.message);
-            }
+            // if(data.author!==user){
+            // toast(data.author+" has sent a message:"+data.message);
+            // }
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
             chatWindow.scrollTo(0, xH);
