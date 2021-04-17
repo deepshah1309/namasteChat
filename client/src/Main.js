@@ -23,27 +23,22 @@ const Main=()=>{
     const [user,setUser]=useState("");
     //after login
     const [message,setMessage]=useState("");
-    const [messageList,setMessageList]=useState([]);
+    const [messageList,setMessageList]=useState([]);  
    
-
-   
-  
-    
     useEffect(()=>{
         socket=io(CONNECTION_URL);
-    },[])
-    useEffect(()=>{
         socket.on("receive_message",(data)=>{
             console.log(data);
-            toast(data);
+           
             setMessageList([...messageList,data]);
+            toast(data.author+":"+data.message);
             var chatWindow = document.getElementById('chat-window'); 
             var xH = chatWindow.scrollHeight; 
             chatWindow.scrollTo(0, xH);
         })
         socket.on("user_joined",async(data)=>{
-            
-            toast(data);
+           
+            toast(data+"  joined the room");
            
            
         })
