@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { toast } from 'react-toastify';
+import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 //import Button from '@material-ui/core/Button';
 
@@ -85,7 +85,7 @@ chatWindow.scrollTo(0, xH);
     }
     return (
         <div className="container-fluid">
-              
+              <ToastContainer />    
             <div className="row text-center borders">
                     <h1 className="text-primary">NamasteChat</h1>
             </div>

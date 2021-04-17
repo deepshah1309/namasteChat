@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Main from './Main';
 import Video from './Video';
 import {
@@ -7,15 +6,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-  
-//   const useStyles = makeStyles((theme) => ({
-//     root: {
-//       width: '100%',
-//       '& > * + *': {
-//         marginTop: theme.spacing(2),
-//       },
-//     },
-//   }));
 const App=()=>{
     
     return (
